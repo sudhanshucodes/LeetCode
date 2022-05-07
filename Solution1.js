@@ -1,15 +1,14 @@
 /**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
+ * @param {number} x
+ * @return {boolean}
  */
-var twoSum = function(nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        for (let j =0; j < nums.length; j++) {
-            // console.log(nums[i], nums[j]);
-            if (nums[i] + nums[j] == target && i!=j) {
-                return [i, j];
-            }
+var isPalindrome = function(x) {
+    x_str = x.toString();
+    x_reverse_str = x_str.split("").reverse().join("");
+    if (x_str == x_reverse_str) {
+        return true;
         }
-    }
+    else {
+        return false;
+        }
 };
