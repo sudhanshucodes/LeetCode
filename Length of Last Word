@@ -1,0 +1,4 @@
+   if (s.length == 0) return0;
+    let array = s.trim().split(' ');
+    return array [array.length-1].length;
+};
