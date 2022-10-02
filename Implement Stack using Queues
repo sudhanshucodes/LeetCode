@@ -1,0 +1,61 @@
+
+var MyStack = function() {
+    
+};
+var MyStack = function() {
+    this.items= new Array();
+};
+
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+MyStack.prototype.push = function(x) {
+    this.items.push(x);
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.pop = function() {
+    var i = 0;
+    while(i<this.items.length-1){
+        var ele =this.items.shift();
+        this.items.push(ele);
+        i++;
+    }
+   return this.items.shift();
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.top = function() {
+    var i = 0;
+    while(i<=this.items.length-1){
+        var ele =this.items.shift();
+        this.items.push(ele);
+        i++;
+    }
+    return ele;
+};
+
+/**
+ * @return {boolean}
+ */
+MyStack.prototype.empty = function() {
+    var size = this.items.length;
+    if(size===0){
+        return true;
+    }
+    return false;
+};
+
+/** 
+ * Your MyStack object will be instantiated and called as such:
+ * var obj = new MyStack()
+ * obj.push(x)
+ * var param_2 = obj.pop()
+ * var param_3 = obj.top()
+ * var param_4 = obj.empty()
+ */
