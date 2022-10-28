@@ -1,0 +1,31 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {character}
+ */
+var findTheDifference = function(s, t) {
+    const letters = {};
+    for(let i =0; i<s.length; i++){
+        if(s[i]!==t[i]){
+            if(!letters[s[i]]){
+                letters[s[i]]=0;
+            }
+            letters[s[i]] = letters[s[i]] +1;
+            if(letters[s[i]]===0){
+                delete letters[s[i]];
+            }
+            if(!letters[t[i]]){
+                letters[t[i]]=0;
+            }
+            letters[t[i]] = letters[t[i]]-1;
+            if(letters[t[i]]===0){
+                delete letters[t[i]];
+            }
+        }
+    }
+    if(!letters[t[t.length-1]]){
+        return t[t.length-1];
+    }
+        delete letters[t[t.length-1]];
+        return Object.keys(letters)[0];
+};
